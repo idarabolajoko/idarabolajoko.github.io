@@ -1,978 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Idara Bolajoko - Freelance Digital Marketer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0c1015;
-      --bg-card: #151b23;
-      --bg-card-hover: #1c242f;
-      --accent-orange: #ff5e28;
-      --accent-orange-hover: #e04e1b;
-      --text-white: #ffffff;
-      --text-muted: #9aa4b2;
-      --border-color: #232b36;
-      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-white);
-      font-family: var(--font-family);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* --- NAVIGATION --- */
-    nav {
-      padding: 24px 0;
-      background: var(--bg-dark);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-white);
-    }
-
-    .btn-talk {
-      background-color: var(--accent-orange);
-      color: var(--text-white);
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-      display: inline-block;
-    }
-
-    .btn-talk:hover {
-      background-color: var(--accent-orange-hover);
-      transform: translateY(-1px);
-    }
-
-    /* --- HERO SECTION --- */
-    .hero {
-      padding: 60px 0 80px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .hero-title {
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 24px;
-    }
-
-    .hero-subtitle {
-      color: var(--accent-orange);
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin-bottom: 36px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background-color: var(--accent-orange);
-      color: var(--text-white);
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background-color 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--accent-orange-hover);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--border-color);
-      color: var(--text-white);
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--bg-card);
-      border-color: var(--text-muted);
-    }
-
-    .hero-tags {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .tag-pill {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      color: var(--accent-orange);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    /* Hero Portrait */
-    .hero-image-wrapper {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .arch-frame {
-      width: 100%;
-      max-width: 380px;
-      height: 480px;
-      border-radius: 200px 200px 24px 24px;
-      border: 2px solid var(--border-color);
-      overflow: hidden;
-      position: relative;
-      background: #11161d;
-    }
-
-    .arch-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-    }
-
-    .badge-float {
-      position: absolute;
-      background: rgba(21, 27, 35, 0.9);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-color);
-      padding: 10px 16px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      z-index: 10;
-    }
-
-    .badge-top-left {
-      top: 40px;
-      left: -20px;
-    }
-
-    .badge-bottom-right {
-      bottom: 40px;
-      right: -10px;
-    }
-
-    .badge-title {
-      font-weight: 700;
-      color: var(--text-white);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .dot-active {
-      width: 8px;
-      height: 8px;
-      background-color: var(--accent-orange);
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .badge-sub {
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      margin-top: 2px;
-    }
-
-    /* --- SECTION COMMON --- */
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 48px;
-      max-width: 600px;
-    }
-
-    /* --- SERVICES SECTION --- */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .service-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 32px 24px;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 94, 40, 0.4);
-    }
-
-    .service-visual {
-      background: #0d1218;
-      border-radius: 14px;
-      height: 120px;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.03);
-    }
-
-    .service-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-
-    .service-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-    }
-
-    .service-list {
-      list-style: none;
-      margin-top: auto;
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
-    }
-
-    .service-list li {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-      position: relative;
-    }
-
-    .service-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Custom SVGs for Service visuals */
-    .bar-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 12px;
-      height: 60px;
-    }
-
-    .bar {
-      width: 18px;
-      background: #232d39;
-      border-radius: 4px;
-    }
-
-    .bar-active {
-      background: var(--accent-orange);
-    }
-
-    /* --- FEATURED PROJECTS --- */
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 32px;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .project-card h3 {
-      font-size: 1.5rem;
-      margin-top: 8px;
-      font-weight: 700;
-    }
-
-    .project-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-
-    .project-skills {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .skill-pill {
-      background: #0d1218;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-    }
-
-    /* --- EXPERIENCE TIMELINE --- */
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      padding-left: 32px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 7px;
-      top: 10px;
-      bottom: 10px;
-      width: 2px;
-      background: var(--accent-orange);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 48px;
-    }
-
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .timeline-node {
-      position: absolute;
-      left: -32px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--bg-dark);
-      border: 3px solid var(--accent-orange);
-    }
-
-    .timeline-date {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .timeline-role {
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-
-    .timeline-company {
-      color: var(--accent-orange);
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .timeline-bullets {
-      list-style: none;
-    }
-
-    .timeline-bullets li {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .timeline-bullets li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: var(--accent-orange);
-    }
-
-    /* --- TOOLS GRID --- */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 36px;
-    }
-
-    .tool-category h4 {
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-      color: var(--text-white);
-    }
-
-    .tool-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tool-pill {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      color: var(--text-white);
-      padding: 8px 18px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    /* --- ABOUT SECTION --- */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 48px;
-      align-items: flex-start;
-    }
-
-    .about-img {
-      width: 100%;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-    }
-
-    .about-text h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-
-    .edu-box {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .edu-box h4 {
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-
-    .edu-item {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .edu-item strong {
-      color: var(--text-white);
-    }
-
-    .edu-item span {
-      color: var(--text-muted);
-    }
-
-    /* --- FOOTER CTA --- */
-    .footer-cta {
-      background-color: var(--accent-orange);
-      color: #000000;
-      padding: 80px 0;
-      margin-top: 80px;
-    }
-
-    .footer-cta h2 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      color: #000000;
-    }
-
-    .email-link {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 800;
-      color: #000000;
-      text-decoration: underline;
-      display: inline-block;
-      margin-bottom: 36px;
-      word-break: break-all;
-    }
-
-    .footer-buttons {
-      display: flex;
-      gap: 16px;
-    }
-
-    .btn-dark {
-      background: #000000;
-      color: #ffffff;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .btn-outline-dark {
-      border: 1px solid #000000;
-      color: #000000;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    /* ==========================================
-       MOBILE RESPONSIVE BREAKPOINTS
-    ========================================== */
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-ctas, .hero-tags {
-        justify-content: center;
-      }
-
-      .hero-image-wrapper {
-        margin-top: 20px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .tools-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        display: none; /* Hide top menu links on small mobile screens */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-title {
-        font-size: 2.2rem;
-      }
-
-      .badge-top-left {
-        left: 0;
-      }
-
-      .badge-bottom-right {
-        right: 0;
-      }
-
-      .arch-frame {
-        height: 380px;
-      }
-
-      .btn-primary, .btn-secondary {
-        width: 100%;
-        text-align: center;
-      }
-
-      .hero-ctas {
-        flex-direction: column;
-      }
-    }
-  </style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NJLB5XZK');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Idara Bolajoko · Email, Performance &amp; SEO Marketing</title>
+<meta name="description" content="Idara Bolajoko is a freelance digital marketer in Lagos specializing in email marketing, performance marketing and SEO.">
+<meta name="theme-color" content="#12141C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#12141C; --surface:#1A1D28; --surface-2:#222636; --line:#2d3246;
+  --text:#F3EFE9; --muted:#A9AEC0; --orange:#FF7A2F; --orange-soft:rgba(255,122,47,.14); --mist:#D9DEE7;
+  --display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --body:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --pad:clamp(20px,5vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;font-size:clamp(16px,1.1vw + 11px,18px);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(18,20,28,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.2rem;text-decoration:none;letter-spacing:-.02em}
+.nav ul{display:flex;gap:26px;align-items:center}
+.nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--orange);color:#1a0d04;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;text-align:center;transition:background .2s,transform .2s}
+.nav .btn{color:#1a0d04;padding:10px 22px}
+.btn:hover{background:#ff9459;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--muted)}
+.btn.ghost:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--line);color:var(--text);width:46px;height:46px;border-radius:12px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .2s,background .2s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{padding:clamp(36px,6vw,72px) 0 clamp(60px,8vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,64px);align-items:center}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.3rem,5vw,4.4rem);line-height:1;letter-spacing:-.03em;margin-bottom:22px}
+.hero .who{display:block;color:var(--orange);font-family:var(--display);font-weight:700;font-size:clamp(1.1rem,2vw,1.6rem);letter-spacing:-.01em;margin-bottom:22px}
+.hero p.lead{font-size:clamp(1.02rem,1.4vw,1.2rem);max-width:34em;color:var(--muted);margin-bottom:32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.pills span{background:var(--orange-soft);color:#ffb88f;padding:7px 16px;border-radius:999px;font-size:.9rem;font-weight:600}
+.portrait{position:relative;justify-self:end;width:100%;max-width:420px}
+.chip{position:absolute;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:12px 18px;box-shadow:0 14px 34px -14px rgba(0,0,0,.7);font-size:.85rem;color:var(--muted);line-height:1.35}
+.chip b{display:block;font-family:var(--display);font-size:1.05rem;color:var(--text);letter-spacing:-.01em}
+.chip.a{left:-38px;top:20%}
+.chip.b{right:-26px;bottom:26%}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--orange);margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,122,47,.6)}70%{box-shadow:0 0 0 9px rgba(255,122,47,0)}100%{box-shadow:0 0 0 0 rgba(255,122,47,0)}}
+.frame{border-radius:210px 210px 28px 28px;overflow:hidden;background:var(--mist);aspect-ratio:4/5;box-shadow:0 0 0 8px var(--surface),0 0 0 9px var(--orange),0 40px 70px -30px rgba(0,0,0,.7)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
+
+/* sections */
+section{padding:clamp(60px,8vw,96px) 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.025em;line-height:1.08;margin-bottom:14px;max-width:16em}
+.sub{color:var(--muted);max-width:36em;margin-bottom:clamp(30px,5vw,48px)}
+
+.services{background:var(--surface)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--surface-2);border:1px solid var(--line);border-radius:26px 26px 26px 6px;padding:28px 26px 30px}
+.svc:nth-child(2){border-radius:26px 26px 6px 26px}
+.svc .viz{height:96px;margin-bottom:20px;background:var(--bg);border-radius:14px;display:flex;align-items:center;justify-content:center;padding:10px}
+.svc h3{font-family:var(--display);font-size:1.4rem;letter-spacing:-.02em;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.97rem;margin-bottom:14px}
+.svc li{padding:8px 0;border-top:1px solid var(--line);font-size:.93rem}
+
+.case{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(18px,4vw,40px);padding:36px 0;border-top:1px solid var(--line)}
+.case:last-of-type{border-bottom:1px solid var(--line)}
+.tag{display:inline-block;background:var(--orange-soft);color:#ffb88f;padding:4px 14px;border-radius:999px;font-weight:600;font-size:.85rem;margin-bottom:14px}
+.case h3{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.75rem);letter-spacing:-.02em;line-height:1.12}
+.case p{color:var(--muted);margin-bottom:18px;max-width:36em}
+.used{display:flex;gap:8px;flex-wrap:wrap}
+.used span{border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:.85rem}
+
+.exp{background:var(--surface)}
+.timeline{border-left:2px solid var(--orange);margin-left:6px}
+.job{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:0 0 44px 30px;position:relative}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-9px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--orange)}
+.job .when{color:var(--muted);font-size:.92rem;padding-top:3px}
+.job h3{font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.4rem);letter-spacing:-.02em;line-height:1.2}
+.job .org{color:var(--orange);font-weight:600;margin-bottom:12px}
+.job li{position:relative;padding:5px 0 5px 20px;color:var(--muted);font-size:.97rem;max-width:44em}
+.job li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:2px;background:var(--orange)}
+
+.tool-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 48px}
+.tool-groups h3{font-family:var(--display);font-size:1.2rem;margin-bottom:14px}
+.tool-wrap{display:flex;flex-wrap:wrap;gap:10px}
+.tool-wrap span{border:1.5px solid var(--line);padding:8px 16px;border-radius:999px;font-weight:500;font-size:.93rem}
+.tool-wrap span:hover{border-color:var(--orange);color:var(--orange)}
+
+.about{background:var(--surface)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,56px);align-items:start}
+.about-grid .small{border-radius:28px;overflow:hidden;background:var(--mist);aspect-ratio:1/1;max-width:340px;width:100%;box-shadow:12px 12px 0 var(--orange-soft)}
+.about-grid .small img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.about p{color:var(--muted);margin-bottom:18px;max-width:36em}
+.about p:first-of-type{color:var(--text);font-size:1.15rem;line-height:1.55}
+.edu{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.edu h3{font-family:var(--display);font-size:1.2rem;margin-bottom:12px}
+.edu li{color:var(--muted);font-size:.97rem;padding:4px 0}
+.edu li b{color:var(--text);font-weight:600}
+
+.contact{background:var(--orange);color:#1a0d04}
+.contact h2{max-width:12em}
+.mail{font-family:var(--display);font-weight:800;font-size:clamp(1.25rem,4.6vw,2.6rem);letter-spacing:-.02em;text-decoration:none;border-bottom:4px solid #1a0d04;display:inline-block;margin:18px 0 32px;overflow-wrap:anywhere}
+.contact .btn{background:#1a0d04;color:var(--text)}
+.contact .btn:hover{background:#2e1a0b}
+.contact .btn.ghost{background:transparent;color:#1a0d04;border-color:#1a0d04}
+.contact .btn.ghost:hover{background:#1a0d04;color:var(--text)}
+footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
+
+/* tablet */
+@media (max-width:1000px){
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc:nth-child(3){grid-column:1/-1}
+}
+
+/* mobile */
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  .nav ul{position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px var(--pad) 20px;display:none}
+  .nav ul.open{display:flex}
+  .nav li a{display:block;padding:14px 0;font-size:1.05rem;border-bottom:1px solid var(--line)}
+  .nav li:last-child{margin-top:16px}
+  .nav li:last-child a{border:0;padding:14px 22px}
+  .hero-grid,.about-grid,.case{grid-template-columns:1fr}
+  .portrait{justify-self:center;max-width:340px;order:-1}
+  .chip.a{left:-10px}
+  .chip.b{right:-10px}
+  .hero{padding-top:28px}
+  .svc-grid,.tool-groups{grid-template-columns:1fr}
+  .svc:nth-child(3){grid-column:auto}
+  .job{grid-template-columns:1fr;gap:6px;padding-left:24px}
+  .about-grid .small{max-width:280px;margin:0 auto}
+  .cta .btn{flex:1 1 100%}
+}
+@media (max-width:420px){
+  .chip{padding:9px 13px;font-size:.78rem}
+  .chip b{font-size:.95rem}
+  .chip.a{left:-6px}
+  .chip.b{right:-6px}
+  .pills span{font-size:.82rem;padding:6px 13px}
+  .tool-wrap span{font-size:.88rem;padding:7px 14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dot{animation:none}
+  .btn,.menu-btn span,.menu-btn span::before,.menu-btn span::after{transition:none}
+}
+</style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJLB5XZK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-  <!-- NAV -->
-  <nav>
-    <div class="container nav-container">
-      <div class="logo">Idara Bolajoko</div>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-      <a href="#contact" class="btn-talk">Let's talk</a>
-    </div>
-  </nav>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Idara Bolajoko</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="btn" href="#contact">Let’s talk</a></li>
+    </ul>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <h1 class="hero-title">Marketing that lands in the inbox, the feed and page one.</h1>
-        <div class="hero-subtitle">Idara Bolajoko · Freelance digital marketer</div>
-        <p class="hero-desc">
-          I build email programs people open, paid campaigns you can trace back to sales, and search strategies that bring in the right traffic. Every decision is backed by data.
-        </p>
-        <div class="hero-ctas">
-          <a href="#work" class="btn-primary">See my work</a>
-          <a href="#contact" class="btn-secondary">Get in touch</a>
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Marketing that lands in the inbox, the feed and page one.</h1>
+        <span class="who">Idara Bolajoko · Freelance digital marketer</span>
+        <p class="lead">I build email programs people open, paid campaigns you can trace back to sales, and search strategies that bring in the right traffic. Every decision is backed by data.</p>
+        <div class="cta">
+          <a class="btn" href="#work">See my work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
-        <div class="hero-tags">
-          <span class="tag-pill">Email marketing</span>
-          <span class="tag-pill">Performance marketing</span>
-          <span class="tag-pill">SEO</span>
-        </div>
-      </div>
-
-      <div class="hero-image-wrapper">
-        <div class="arch-frame">
-          <img src="profile.png" alt="Idara Bolajoko">
-        </div>
-        <div class="badge-float badge-top-left">
-          <div class="badge-title"><span class="dot-active"></span> Open for projects</div>
-          <div class="badge-sub">Freelance, based in Lagos</div>
-        </div>
-        <div class="badge-float badge-bottom-right">
-          <div class="badge-title">B.Sc. Economics</div>
-          <div class="badge-sub">University of Lagos</div>
+        <div class="pills" aria-label="Specialties">
+          <span>Email marketing</span><span>Performance marketing</span><span>SEO</span>
         </div>
       </div>
+      <div class="portrait">
+        <div class="frame"><img src="profile.png" alt="Portrait of Idara Bolajoko in a white shirt" width="704" height="1482"></div>
+        <div class="chip a"><b><span class="dot"></span>Open for projects</b>Freelance, based in Lagos</div>
+        <div class="chip b"><b>B.Sc. Economics</b>University of Lagos</div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Three channels, one goal: growth you can measure.</h2>
-      <p class="section-desc">Search brings people in, ads speed it up, and email keeps them coming back. I set up each one so you can see what's working.</p>
-
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div class="service-visual">
-            <div style="width: 100%;">
-              <div style="height: 10px; background: var(--accent-orange); border-radius: 5px; margin-bottom: 8px; width: 80%;"></div>
-              <div style="height: 6px; background: #232d39; border-radius: 3px; margin-bottom: 6px; width: 60%;"></div>
-              <div style="height: 6px; background: #232d39; border-radius: 3px; width: 40%;"></div>
-            </div>
-          </div>
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>Three channels, one goal: growth you can measure.</h2>
+      <p class="sub">Search brings people in, ads speed it up, and email keeps them coming back. I set up each one so you can see what’s working.</p>
+      <div class="svc-grid">
+        <article class="svc">
+          <div class="viz" aria-hidden="true"><svg width="100%" height="76" viewBox="0 0 220 76"><rect x="6" y="8" width="208" height="16" rx="8" fill="#FF7A2F"/><rect x="6" y="30" width="208" height="16" rx="8" fill="#fff" opacity=".12"/><rect x="6" y="52" width="140" height="16" rx="8" fill="#fff" opacity=".12"/><circle cx="196" cy="16" r="4" fill="#12141C"/></svg></div>
           <h3>Email marketing</h3>
           <p>Automated flows and newsletters that welcome, nurture and bring customers back, written to be read.</p>
-          <ul class="service-list">
-            <li>Onboarding and promotional drip sequences</li>
-            <li>Audience segmentation and dynamic fields</li>
-            <li>Weekly newsletters and lifecycle campaigns</li>
-          </ul>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card">
-          <div class="service-visual">
-            <div class="bar-chart">
-              <div class="bar" style="height: 20px;"></div>
-              <div class="bar" style="height: 35px;"></div>
-              <div class="bar" style="height: 45px;"></div>
-              <div class="bar bar-active" style="height: 60px;"></div>
-            </div>
-          </div>
+          <ul><li>Onboarding and promotional drip sequences</li><li>Audience segmentation and dynamic fields</li><li>Weekly newsletters and lifecycle campaigns</li></ul>
+        </article>
+        <article class="svc">
+          <div class="viz" aria-hidden="true"><svg width="100%" height="76" viewBox="0 0 220 76"><rect x="10" y="46" width="22" height="24" rx="5" fill="#fff" opacity=".16"/><rect x="48" y="36" width="22" height="34" rx="5" fill="#fff" opacity=".16"/><rect x="86" y="28" width="22" height="42" rx="5" fill="#fff" opacity=".16"/><rect x="124" y="16" width="22" height="54" rx="5" fill="#fff" opacity=".16"/><rect x="162" y="4" width="22" height="66" rx="5" fill="#FF7A2F"/></svg></div>
           <h3>Performance marketing</h3>
           <p>Paid campaigns with tracking set up properly, so every spend ties back to a result.</p>
-          <ul class="service-list">
-            <li>Meta, Google and Snapchat ads</li>
-            <li>Pixel, event and conversion tracking with GTM</li>
-            <li>Creative A/B testing to lower cost per acquisition</li>
-          </ul>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card">
-          <div class="service-visual">
-            <div style="width: 100%; border: 1px solid #232d39; padding: 10px; border-radius: 8px;">
-              <div style="height: 8px; background: var(--accent-orange); border-radius: 4px; width: 70%;"></div>
-            </div>
-          </div>
+          <ul><li>Meta, Google and Snapchat ads</li><li>Pixel, event and conversion tracking with GTM</li><li>Creative A/B testing to lower cost per acquisition</li></ul>
+        </article>
+        <article class="svc">
+          <div class="viz" aria-hidden="true"><svg width="100%" height="76" viewBox="0 0 220 76"><rect x="6" y="6" width="208" height="20" rx="10" fill="#FF7A2F"/><rect x="20" y="13" width="90" height="6" rx="3" fill="#12141C"/><rect x="6" y="32" width="208" height="16" rx="8" fill="#fff" opacity=".1"/><rect x="6" y="54" width="208" height="16" rx="8" fill="#fff" opacity=".1"/></svg></div>
           <h3>SEO</h3>
           <p>Search work that gets your pages found by the people already looking for what you offer.</p>
-          <ul class="service-list">
-            <li>Technical audits and indexing fixes</li>
-            <li>Keyword research and content strategy</li>
-            <li>On-page optimization with Search Console</li>
-          </ul>
-        </div>
+          <ul><li>Technical audits and indexing fixes</li><li>Keyword research and content strategy</li><li>On-page optimization with Search Console</li></ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS -->
   <section id="work">
-    <div class="container">
-      <h2 class="section-title">Featured projects</h2>
-      <p class="section-desc">Hands-on builds that show how I set things up from start to finish.</p>
-
-      <div class="projects-list">
-        <div class="project-card">
-          <div>
-            <span class="tag-pill">Email marketing</span>
-            <h3>Email lifecycle automation</h3>
-          </div>
-          <div>
-            <p class="project-desc">Built automated onboarding and promotional drip sequences with dynamic contact fields and behavior-based list segmentation, so each customer gets the right message at the right time.</p>
-            <div class="project-skills">
-              <span class="skill-pill">Brevo</span>
-              <span class="skill-pill">Segmentation</span>
-              <span class="skill-pill">Automation workflows</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <span class="tag-pill">Performance marketing</span>
-            <h3>Paid acquisition and tracking</h3>
-          </div>
-          <div>
-            <p class="project-desc">Configured Google Tag Manager triggers and Meta Pixel conversion tracking to monitor A/B tests on ad creatives and bring down cost per acquisition.</p>
-            <div class="project-skills">
-              <span class="skill-pill">Meta Ads</span>
-              <span class="skill-pill">Google Tag Manager</span>
-              <span class="skill-pill">Meta Pixel</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <span class="tag-pill">SEO</span>
-            <h3>Technical SEO audit</h3>
-          </div>
-          <div>
-            <p class="project-desc">Ran a full on-page SEO audit, fixed search indexing errors and built a keyword strategy around high-intent searches.</p>
-            <div class="project-skills">
-              <span class="skill-pill">Google Search Console</span>
-              <span class="skill-pill">Keyword research</span>
-              <span class="skill-pill">On-page SEO</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="wrap">
+      <h2>Featured projects</h2>
+      <p class="sub">Hands-on builds that show how I set things up from start to finish.</p>
+      <article class="case">
+        <div><span class="tag">Email marketing</span><h3>Email lifecycle automation</h3></div>
+        <div><p>Built automated onboarding and promotional drip sequences with dynamic contact fields and behavior-based list segmentation, so each customer gets the right message at the right time.</p>
+        <div class="used"><span>Brevo</span><span>Segmentation</span><span>Automation workflows</span></div></div>
+      </article>
+      <article class="case">
+        <div><span class="tag">Performance marketing</span><h3>Paid acquisition and tracking</h3></div>
+        <div><p>Configured Google Tag Manager triggers and Meta Pixel conversion tracking to monitor A/B tests on ad creatives and bring down cost per acquisition.</p>
+        <div class="used"><span>Meta Ads</span><span>Google Tag Manager</span><span>Meta Pixel</span></div></div>
+      </article>
+      <article class="case">
+        <div><span class="tag">SEO</span><h3>Technical SEO audit</h3></div>
+        <div><p>Ran a full on-page SEO audit, fixed search indexing errors and built a keyword strategy around high-intent searches.</p>
+        <div class="used"><span>Google Search Console</span><span>Keyword research</span><span>On-page SEO</span></div></div>
+      </article>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <p class="section-desc">From customer relations and data work to running my own online store.</p>
-
+  <section class="exp" id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="sub">From customer relations and data work to running my own online store.</p>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-date">2026 – Present</div>
-          <h3 class="timeline-role">Digital Marketer & E-commerce Founder</h3>
-          <div class="timeline-company">Graye Treats · Lagos, Nigeria</div>
-          <ul class="timeline-bullets">
-            <li>Built automated email workflows and weekly newsletters in Brevo with customized audience segmentation, to lift open rates and retention.</li>
-            <li>Ran multi-stage Meta Ads campaigns with lookalike audiences and conversion pixels to drive online store sales.</li>
-            <li>Improved search visibility by resolving indexing issues in Google Search Console and adding targeted keywords.</li>
-            <li>Analyzed sales and marketing data in Excel and Power BI to guide ad spend and campaign ROI.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-date">2020 – 2025</div>
-          <h3 class="timeline-role">Customer Relations & Marketing Coordinator</h3>
-          <div class="timeline-company">GI Homes · Lagos, Nigeria</div>
-          <ul class="timeline-bullets">
-            <li>Wrote promotional content and targeted emails for multi-channel client acquisition campaigns in smart home automation.</li>
-            <li>Ran outbound outreach campaigns and tracked engagement in CRM systems to sharpen targeting.</li>
-            <li>Managed client communications and service inquiries, keeping a 95%+ client satisfaction rating.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-date">2023 – 2025</div>
-          <h3 class="timeline-role">Data Specialist / Annotator</h3>
-          <div class="timeline-company">Hugo Technologies · Remote</div>
-          <ul class="timeline-bullets">
-            <li>Cleaned, structured and annotated complex data for AI model training, following detailed analytical guidelines.</li>
-            <li>Kept accuracy and quality high under tight deadlines.</li>
-          </ul>
-        </div>
+        <article class="job">
+          <div class="when">2026 – Present<br>Lagos, Nigeria</div>
+          <div>
+            <h3>Digital Marketer &amp; E-commerce Founder</h3>
+            <div class="org">Graye Treats</div>
+            <ul>
+              <li>Built automated email workflows and weekly newsletters in Brevo with customized audience segmentation, to lift open rates and retention.</li>
+              <li>Ran multi-stage Meta Ads campaigns with lookalike audiences and conversion pixels to drive online store sales.</li>
+              <li>Improved search visibility by resolving indexing issues in Google Search Console and adding targeted keywords.</li>
+              <li>Analyzed sales and marketing data in Excel and Power BI to guide ad spend and campaign ROI.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="when">2020 – 2025<br>Lagos, Nigeria</div>
+          <div>
+            <h3>Customer Relations &amp; Marketing Coordinator</h3>
+            <div class="org">GI Homes</div>
+            <ul>
+              <li>Wrote promotional content and targeted emails for multi-channel client acquisition campaigns in smart home automation.</li>
+              <li>Ran outbound outreach campaigns and tracked engagement in CRM systems to sharpen targeting.</li>
+              <li>Managed client communications and service inquiries, keeping a 95%+ client satisfaction rating.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="when">2023 – 2025<br>Remote</div>
+          <div>
+            <h3>Data Specialist / Annotator</h3>
+            <div class="org">Hugo Technologies</div>
+            <ul>
+              <li>Cleaned, structured and annotated complex data for AI model training, following detailed analytical guidelines.</li>
+              <li>Kept accuracy and quality high under tight deadlines.</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- TOOLS -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Tools I work in</h2>
-      <p class="section-desc">The platforms I use day to day.</p>
-
-      <div class="tools-grid">
-        <div class="tool-category">
-          <h4>Email and CRM</h4>
-          <div class="tool-pills">
-            <span class="tool-pill">Brevo</span>
-            <span class="tool-pill">HubSpot</span>
-            <span class="tool-pill">CRM</span>
-          </div>
-        </div>
-
-        <div class="tool-category">
-          <h4>Performance marketing</h4>
-          <div class="tool-pills">
-            <span class="tool-pill">Google Ads</span>
-            <span class="tool-pill">Meta Ads Manager</span>
-            <span class="tool-pill">Snapchat Ads</span>
-            <span class="tool-pill">Pixel and conversion setup</span>
-            <span class="tool-pill">Google Tag Manager</span>
-          </div>
-        </div>
-
-        <div class="tool-category">
-          <h4>SEO</h4>
-          <div class="tool-pills">
-            <span class="tool-pill">Google Search Console</span>
-            <span class="tool-pill">Semrush</span>
-            <span class="tool-pill">Keyword research</span>
-            <span class="tool-pill">On-page optimization</span>
-            <span class="tool-pill">Content strategy</span>
-          </div>
-        </div>
-
-        <div class="tool-category">
-          <h4>Data and analytics</h4>
-          <div class="tool-pills">
-            <span class="tool-pill">Excel</span>
-            <span class="tool-pill">Power BI</span>
-            <span class="tool-pill">SQL</span>
-            <span class="tool-pill">Python (Pandas)</span>
-            <span class="tool-pill">Performance reporting</span>
-          </div>
-        </div>
+  <section id="tools">
+    <div class="wrap">
+      <h2>Tools I work in</h2>
+      <p class="sub">The platforms I use day to day.</p>
+      <div class="tool-groups">
+        <div><h3>Email and CRM</h3><div class="tool-wrap"><span>Brevo</span><span>HubSpot</span><span>CRM</span></div></div>
+        <div><h3>Performance marketing</h3><div class="tool-wrap"><span>Google Ads</span><span>Meta Ads Manager</span><span>Snapchat Ads</span><span>Pixel and conversion setup</span><span>Google Tag Manager</span></div></div>
+        <div><h3>SEO</h3><div class="tool-wrap"><span>Google Search Console</span><span>Semrush</span><span>Keyword research</span><span>On-page optimization</span><span>Content strategy</span></div></div>
+        <div><h3>Data and analytics</h3><div class="tool-wrap"><span>Excel</span><span>Power BI</span><span>SQL</span><span>Python (Pandas)</span><span>Performance reporting</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container about-grid">
-      <img src="profile.png" alt="Idara" class="about-img">
-      <div class="about-text">
-        <h2>Hi, I'm Idara.</h2>
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="small"><img src="profile.png" alt="Idara Bolajoko smiling softly with a hand resting by her ear" loading="lazy"></div>
+      <div>
+        <h2>Hi, I’m Idara.</h2>
         <p>My path into marketing grew naturally out of my background in economics and data analytics. I have always been fascinated by why people buy, and I quickly realized that effective marketing relies as much on real data as it does on creative messaging. Today, I combine analytical insights with human-centered copy to build strategies that genuinely connect and drive results.</p>
         <p>I love working with e-commerce brands looking to boost repeat sales through smart email flows, growing service businesses that need better visibility on Google, and busy founders who want clear, measurable marketing without the confusing jargon.</p>
         <p>When I am not analyzing campaign metrics or setting up email workflows, I am usually trying out new recipes or styling natural hair at home. I bring that same patience and detail to every project I touch.</p>
-
-        <div class="edu-box">
-          <h4>Education and certifications</h4>
-          <div class="edu-item"><strong>B.Sc. (Honours) in Economics</strong>, <span>University of Lagos, Nigeria</span></div>
-          <div class="edu-item"><strong>Virtual Assistant Certification</strong>, <span>ALX Africa</span></div>
+        <div class="edu">
+          <h3>Education and certifications</h3>
+          <ul>
+            <li><b>B.Sc. (Honours) in Economics</b>, University of Lagos, Nigeria</li>
+            <li><b>Virtual Assistant Certification</b>, ALX Africa</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER CTA -->
-  <footer class="footer-cta" id="contact">
-    <div class="container">
+  <section class="contact" id="contact">
+    <div class="wrap">
       <h2>Have a campaign in mind?</h2>
-      <a href="mailto:idarabolajoko@gmail.com" class="email-link">idarabolajoko@gmail.com</a>
-      <div class="footer-buttons">
-        <a href="mailto:idarabolajoko@gmail.com" class="btn-dark">Send an email</a>
-        <a href="https://github.com" target="_blank" class="btn-outline-dark">GitHub</a>
+      <a class="mail" href="mailto:idarabolajoko@gmail.com">idarabolajoko@gmail.com</a>
+      <div class="cta">
+        <a class="btn" href="mailto:idarabolajoko@gmail.com">Send an email</a>
+        <a class="btn ghost" href="https://github.com/idarabolajoko">GitHub</a>
       </div>
     </div>
-  </footer>
+  </section>
+</main>
 
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Idara Bolajoko · Lagos, Nigeria</div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
+function setMenu(open){menu.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);btn.setAttribute('aria-label',open?'Close menu':'Open menu');}
+btn.addEventListener('click',function(){setMenu(!menu.classList.contains('open'));});
+menu.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
+window.addEventListener('resize',function(){if(window.innerWidth>860)setMenu(false);});
+</script>
 </body>
 </html>
