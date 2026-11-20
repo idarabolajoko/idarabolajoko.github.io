@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NJLB5XZK');</script>
-<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (tracking only) -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NJLB5XZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Idara Bolajoko · Email, Performance &amp; SEO Marketing</title>
 <meta name="description" content="Idara Bolajoko is a freelance digital marketer in Lagos specializing in email marketing, performance marketing and SEO.">
-<meta name="theme-color" content="#12141C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,86 +22,96 @@
   --text:#F3EFE9; --muted:#A9AEC0; --orange:#FF7A2F; --orange-soft:rgba(255,122,47,.14); --mist:#D9DEE7;
   --display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
   --body:'DM Sans','Helvetica Neue',Arial,sans-serif;
-  --pad:clamp(20px,5vw,40px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
-body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;font-size:clamp(16px,1.1vw + 11px,18px);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-ul{list-style:none}
 :focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
 
-/* header */
-header{position:sticky;top:0;z-index:30;background:rgba(18,20,28,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:20;background:rgba(18,20,28,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:var(--display);font-weight:800;font-size:1.2rem;text-decoration:none;letter-spacing:-.02em}
-.nav ul{display:flex;gap:26px;align-items:center}
+.logo{font-family:var(--display);font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:-.02em}
+.nav ul{display:flex;gap:28px;list-style:none;align-items:center}
 .nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted)}
 .nav a:hover{color:var(--text)}
-.btn{display:inline-block;background:var(--orange);color:#1a0d04;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;text-align:center;transition:background .2s,transform .2s}
-.nav .btn{color:#1a0d04;padding:10px 22px}
+.btn{display:inline-block;background:var(--orange);color:#1a0d04;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;transition:background .2s,transform .2s}
+.nav .btn{color:#1a0d04}
 .btn:hover{background:#ff9459;transform:translateY(-2px)}
 .btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--muted)}
 .btn.ghost:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
-.menu-btn{display:none;background:none;border:1.5px solid var(--line);color:var(--text);width:46px;height:46px;border-radius:12px;cursor:pointer;align-items:center;justify-content:center}
-.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .2s,background .2s}
-.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
-.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
-.menu-btn[aria-expanded="true"] span{background:transparent}
-.menu-btn[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
-.menu-btn[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
 
-/* hero */
-.hero{padding:clamp(36px,6vw,72px) 0 clamp(60px,8vw,96px)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,64px);align-items:center}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.3rem,5vw,4.4rem);line-height:1;letter-spacing:-.03em;margin-bottom:22px}
-.hero .who{display:block;color:var(--orange);font-family:var(--display);font-weight:700;font-size:clamp(1.1rem,2vw,1.6rem);letter-spacing:-.01em;margin-bottom:22px}
-.hero p.lead{font-size:clamp(1.02rem,1.4vw,1.2rem);max-width:34em;color:var(--muted);margin-bottom:32px}
+.hero{padding:64px 0 92px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,6vw,5.1rem);line-height:.98;letter-spacing:-.035em;margin-bottom:26px}
+.hero h1 span{display:block;color:var(--orange);font-weight:700;margin-top:14px;font-size:.5em;letter-spacing:-.02em}
+.hero p.lead{font-size:1.2rem;max-width:34em;color:var(--muted);margin-bottom:34px}
 .cta{display:flex;gap:14px;flex-wrap:wrap}
-.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
 .pills span{background:var(--orange-soft);color:#ffb88f;padding:7px 16px;border-radius:999px;font-size:.9rem;font-weight:600}
-.portrait{position:relative;justify-self:end;width:100%;max-width:420px}
+
+.portrait{position:relative;justify-self:end;width:100%;max-width:440px}
+.frame{border-radius:220px 220px 28px 28px;overflow:hidden;background:var(--mist);aspect-ratio:4/5.2;box-shadow:0 0 0 8px var(--surface),0 0 0 9px var(--orange),0 40px 70px -30px rgba(0,0,0,.7)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
 .chip{position:absolute;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:12px 18px;box-shadow:0 14px 34px -14px rgba(0,0,0,.7);font-size:.85rem;color:var(--muted);line-height:1.35}
 .chip b{display:block;font-family:var(--display);font-size:1.05rem;color:var(--text);letter-spacing:-.01em}
 .chip.a{left:-38px;top:20%}
 .chip.b{right:-26px;bottom:26%}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--orange);margin-right:8px;animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,122,47,.6)}70%{box-shadow:0 0 0 9px rgba(255,122,47,0)}100%{box-shadow:0 0 0 0 rgba(255,122,47,0)}}
-.frame{border-radius:210px 210px 28px 28px;overflow:hidden;background:var(--mist);aspect-ratio:4/5;box-shadow:0 0 0 8px var(--surface),0 0 0 9px var(--orange),0 40px 70px -30px rgba(0,0,0,.7)}
-.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
 
-/* sections */
-section{padding:clamp(60px,8vw,96px) 0}
-h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.025em;line-height:1.08;margin-bottom:14px;max-width:16em}
-.sub{color:var(--muted);max-width:36em;margin-bottom:clamp(30px,5vw,48px)}
+section{padding:92px 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.03em;line-height:1.05;margin-bottom:14px;max-width:16em}
+.sub{color:var(--muted);max-width:36em;margin-bottom:48px}
 
 .services{background:var(--surface)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.svc{background:var(--surface-2);border:1px solid var(--line);border-radius:26px 26px 26px 6px;padding:28px 26px 30px}
+.svc{background:var(--surface-2);border:1px solid var(--line);border-radius:26px 26px 26px 6px;padding:32px 30px 34px}
 .svc:nth-child(2){border-radius:26px 26px 6px 26px}
-.svc .viz{height:96px;margin-bottom:20px;background:var(--bg);border-radius:14px;display:flex;align-items:center;justify-content:center;padding:10px}
-.svc h3{font-family:var(--display);font-size:1.4rem;letter-spacing:-.02em;margin-bottom:8px}
-.svc p{color:var(--muted);font-size:.97rem;margin-bottom:14px}
-.svc li{padding:8px 0;border-top:1px solid var(--line);font-size:.93rem}
+.svc .viz{height:96px;margin-bottom:22px;background:var(--bg);border-radius:14px;display:flex;align-items:center;justify-content:center;padding:10px}
+.svc h3{font-family:var(--display);font-size:1.5rem;letter-spacing:-.02em;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.98rem;margin-bottom:16px}
+.svc ul{list-style:none;font-size:.93rem}
+.svc li{padding:7px 0;border-top:1px solid var(--line)}
 
-.case{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(18px,4vw,40px);padding:36px 0;border-top:1px solid var(--line)}
+.case{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;padding:38px 0;border-top:1px solid var(--line)}
 .case:last-of-type{border-bottom:1px solid var(--line)}
 .tag{display:inline-block;background:var(--orange-soft);color:#ffb88f;padding:4px 14px;border-radius:999px;font-weight:600;font-size:.85rem;margin-bottom:14px}
-.case h3{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.75rem);letter-spacing:-.02em;line-height:1.12}
+.case h3{font-family:var(--display);font-size:1.75rem;letter-spacing:-.025em;line-height:1.12}
 .case p{color:var(--muted);margin-bottom:18px;max-width:36em}
 .used{display:flex;gap:8px;flex-wrap:wrap}
-.used span{border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:.85rem}
+.used span{border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:.85rem;color:var(--text)}
+
+.xyz{border-left:3px solid var(--orange);padding:2px 0 2px 16px;margin:4px 0 22px;color:var(--text)!important;font-size:1.02rem}
+.xyz b{color:var(--orange);font-weight:600}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 20px}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 16px 18px}
+.steps .m{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.steps .n{display:block;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em;line-height:1.15;margin-bottom:6px}
+.steps .d{display:block;font-size:.9rem;color:var(--muted);line-height:1.45}
+
+.certs{border-top:1px solid var(--line)}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:22px 22px 22px 6px;padding:26px 28px 28px;display:flex;gap:18px;align-items:flex-start}
+.cert:nth-child(even){border-radius:22px 22px 6px 22px}
+.cert .seal{flex:none;width:48px;height:48px;border-radius:14px;background:var(--orange-soft);display:flex;align-items:center;justify-content:center}
+.cert h3{font-family:var(--display);font-size:1.25rem;letter-spacing:-.02em;line-height:1.2;margin-bottom:4px}
+.cert .by{color:var(--orange);font-weight:600;font-size:.95rem;margin-bottom:10px}
+.cert dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:.88rem;color:var(--muted)}
+.cert dt{color:var(--text);font-weight:500}
+.cert dd{word-break:break-all}
 
 .exp{background:var(--surface)}
 .timeline{border-left:2px solid var(--orange);margin-left:6px}
 .job{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:0 0 44px 30px;position:relative}
 .job:last-child{padding-bottom:0}
-.job::before{content:"";position:absolute;left:-9px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--orange)}
+.job::before{content:"";position:absolute;left:-9px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--orange)}
 .job .when{color:var(--muted);font-size:.92rem;padding-top:3px}
-.job h3{font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.4rem);letter-spacing:-.02em;line-height:1.2}
+.job h3{font-family:var(--display);font-size:1.4rem;letter-spacing:-.02em;line-height:1.2}
 .job .org{color:var(--orange);font-weight:600;margin-bottom:12px}
+.job ul{list-style:none}
 .job li{position:relative;padding:5px 0 5px 20px;color:var(--muted);font-size:.97rem;max-width:44em}
 .job li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:2px;background:var(--orange)}
 
@@ -109,75 +122,47 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4vw,3rem);l
 .tool-wrap span:hover{border-color:var(--orange);color:var(--orange)}
 
 .about{background:var(--surface)}
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,56px);align-items:start}
-.about-grid .small{border-radius:28px;overflow:hidden;background:var(--mist);aspect-ratio:1/1;max-width:340px;width:100%;box-shadow:12px 12px 0 var(--orange-soft)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.about-grid .small{border-radius:28px;overflow:hidden;background:var(--mist);aspect-ratio:1/1;max-width:340px;box-shadow:12px 12px 0 var(--orange-soft)}
 .about-grid .small img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
 .about p{color:var(--muted);margin-bottom:18px;max-width:36em}
-.about p:first-of-type{color:var(--text);font-size:1.15rem;line-height:1.55}
-.edu{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.about p:first-of-type{color:var(--text);font-size:1.2rem;line-height:1.55}
+.edu{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
 .edu h3{font-family:var(--display);font-size:1.2rem;margin-bottom:12px}
-.edu li{color:var(--muted);font-size:.97rem;padding:4px 0}
+.edu li{list-style:none;color:var(--muted);font-size:.97rem;padding:4px 0}
 .edu li b{color:var(--text);font-weight:600}
 
 .contact{background:var(--orange);color:#1a0d04}
 .contact h2{max-width:12em}
-.mail{font-family:var(--display);font-weight:800;font-size:clamp(1.25rem,4.6vw,2.6rem);letter-spacing:-.02em;text-decoration:none;border-bottom:4px solid #1a0d04;display:inline-block;margin:18px 0 32px;overflow-wrap:anywhere}
+.mail{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,4vw,2.7rem);letter-spacing:-.03em;text-decoration:none;border-bottom:4px solid #1a0d04;display:inline-block;margin:18px 0 34px;word-break:break-all}
 .contact .btn{background:#1a0d04;color:var(--text)}
 .contact .btn:hover{background:#2e1a0b}
 .contact .btn.ghost{background:transparent;color:#1a0d04;border-color:#1a0d04}
 .contact .btn.ghost:hover{background:#1a0d04;color:var(--text)}
-footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
+footer{padding:28px 0;font-size:.88rem;color:var(--muted)}
 
-/* tablet */
-@media (max-width:1000px){
-  .svc-grid{grid-template-columns:1fr 1fr}
-  .svc:nth-child(3){grid-column:1/-1}
-}
-
-/* mobile */
 @media (max-width:860px){
-  .menu-btn{display:inline-flex}
-  .nav ul{position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px var(--pad) 20px;display:none}
-  .nav ul.open{display:flex}
-  .nav li a{display:block;padding:14px 0;font-size:1.05rem;border-bottom:1px solid var(--line)}
-  .nav li:last-child{margin-top:16px}
-  .nav li:last-child a{border:0;padding:14px 22px}
   .hero-grid,.about-grid,.case{grid-template-columns:1fr}
-  .portrait{justify-self:center;max-width:340px;order:-1}
-  .chip.a{left:-10px}
-  .chip.b{right:-10px}
-  .hero{padding-top:28px}
-  .svc-grid,.tool-groups{grid-template-columns:1fr}
-  .svc:nth-child(3){grid-column:auto}
-  .job{grid-template-columns:1fr;gap:6px;padding-left:24px}
-  .about-grid .small{max-width:280px;margin:0 auto}
-  .cta .btn{flex:1 1 100%}
-}
-@media (max-width:420px){
-  .chip{padding:9px 13px;font-size:.78rem}
-  .chip b{font-size:.95rem}
-  .chip.a{left:-6px}
-  .chip.b{right:-6px}
-  .pills span{font-size:.82rem;padding:6px 13px}
-  .tool-wrap span{font-size:.88rem;padding:7px 14px}
+  .svc-grid,.tool-groups,.cert-grid,.steps{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:6px}
+  .portrait{justify-self:center;max-width:360px;margin-top:20px}
+  .chip.a{left:-8px}.chip.b{right:-8px}
+  .nav ul li:not(:last-child){display:none}
+  section{padding:68px 0}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .dot{animation:none}
-  .btn,.menu-btn span,.menu-btn span::before,.menu-btn span::after{transition:none}
+  .btn{transition:none}
 }
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJLB5XZK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top">Idara Bolajoko</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <ul id="menu">
+    <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -191,8 +176,7 @@ footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <h1>Marketing that lands in the inbox, the feed and page one.</h1>
-        <span class="who">Idara Bolajoko · Freelance digital marketer</span>
+        <h1>Marketing that lands in the inbox, the feed and page one.<span>Idara Bolajoko · Freelance digital marketer</span></h1>
         <p class="lead">I build email programs people open, paid campaigns you can trace back to sales, and search strategies that bring in the right traffic. Every decision is backed by data.</p>
         <div class="cta">
           <a class="btn" href="#work">See my work</a>
@@ -202,6 +186,7 @@ footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
           <span>Email marketing</span><span>Performance marketing</span><span>SEO</span>
         </div>
       </div>
+
       <div class="portrait">
         <div class="frame"><img src="profile.png" alt="Portrait of Idara Bolajoko in a white shirt" width="704" height="1482"></div>
         <div class="chip a"><b><span class="dot"></span>Open for projects</b>Freelance, based in Lagos</div>
@@ -216,19 +201,25 @@ footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
       <p class="sub">Search brings people in, ads speed it up, and email keeps them coming back. I set up each one so you can see what’s working.</p>
       <div class="svc-grid">
         <article class="svc">
-          <div class="viz" aria-hidden="true"><svg width="100%" height="76" viewBox="0 0 220 76"><rect x="6" y="8" width="208" height="16" rx="8" fill="#FF7A2F"/><rect x="6" y="30" width="208" height="16" rx="8" fill="#fff" opacity=".12"/><rect x="6" y="52" width="140" height="16" rx="8" fill="#fff" opacity=".12"/><circle cx="196" cy="16" r="4" fill="#12141C"/></svg></div>
+          <div class="viz" aria-hidden="true">
+            <svg width="100%" height="76" viewBox="0 0 220 76"><rect x="6" y="8" width="208" height="16" rx="8" fill="#FF7A2F"/><rect x="6" y="30" width="208" height="16" rx="8" fill="#fff" opacity=".12"/><rect x="6" y="52" width="140" height="16" rx="8" fill="#fff" opacity=".12"/><circle cx="196" cy="16" r="4" fill="#12141C"/></svg>
+          </div>
           <h3>Email marketing</h3>
           <p>Automated flows and newsletters that welcome, nurture and bring customers back, written to be read.</p>
           <ul><li>Onboarding and promotional drip sequences</li><li>Audience segmentation and dynamic fields</li><li>Weekly newsletters and lifecycle campaigns</li></ul>
         </article>
         <article class="svc">
-          <div class="viz" aria-hidden="true"><svg width="100%" height="76" viewBox="0 0 220 76"><rect x="10" y="46" width="22" height="24" rx="5" fill="#fff" opacity=".16"/><rect x="48" y="36" width="22" height="34" rx="5" fill="#fff" opacity=".16"/><rect x="86" y="28" width="22" height="42" rx="5" fill="#fff" opacity=".16"/><rect x="124" y="16" width="22" height="54" rx="5" fill="#fff" opacity=".16"/><rect x="162" y="4" width="22" height="66" rx="5" fill="#FF7A2F"/></svg></div>
+          <div class="viz" aria-hidden="true">
+            <svg width="100%" height="76" viewBox="0 0 220 76"><rect x="10" y="46" width="22" height="24" rx="5" fill="#fff" opacity=".16"/><rect x="48" y="36" width="22" height="34" rx="5" fill="#fff" opacity=".16"/><rect x="86" y="28" width="22" height="42" rx="5" fill="#fff" opacity=".16"/><rect x="124" y="16" width="22" height="54" rx="5" fill="#fff" opacity=".16"/><rect x="162" y="4" width="22" height="66" rx="5" fill="#FF7A2F"/></svg>
+          </div>
           <h3>Performance marketing</h3>
           <p>Paid campaigns with tracking set up properly, so every spend ties back to a result.</p>
           <ul><li>Meta, Google and Snapchat ads</li><li>Pixel, event and conversion tracking with GTM</li><li>Creative A/B testing to lower cost per acquisition</li></ul>
         </article>
         <article class="svc">
-          <div class="viz" aria-hidden="true"><svg width="100%" height="76" viewBox="0 0 220 76"><rect x="6" y="6" width="208" height="20" rx="10" fill="#FF7A2F"/><rect x="20" y="13" width="90" height="6" rx="3" fill="#12141C"/><rect x="6" y="32" width="208" height="16" rx="8" fill="#fff" opacity=".1"/><rect x="6" y="54" width="208" height="16" rx="8" fill="#fff" opacity=".1"/></svg></div>
+          <div class="viz" aria-hidden="true">
+            <svg width="100%" height="76" viewBox="0 0 220 76"><rect x="6" y="6" width="208" height="20" rx="10" fill="#FF7A2F"/><rect x="20" y="13" width="90" height="6" rx="3" fill="#12141C"/><rect x="6" y="32" width="208" height="16" rx="8" fill="#fff" opacity=".1"/><rect x="6" y="54" width="208" height="16" rx="8" fill="#fff" opacity=".1"/></svg>
+          </div>
           <h3>SEO</h3>
           <p>Search work that gets your pages found by the people already looking for what you offer.</p>
           <ul><li>Technical audits and indexing fixes</li><li>Keyword research and content strategy</li><li>On-page optimization with Search Console</li></ul>
@@ -241,20 +232,50 @@ footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
     <div class="wrap">
       <h2>Featured projects</h2>
       <p class="sub">Hands-on builds that show how I set things up from start to finish.</p>
+
       <article class="case">
         <div><span class="tag">Email marketing</span><h3>Email lifecycle automation</h3></div>
-        <div><p>Built automated onboarding and promotional drip sequences with dynamic contact fields and behavior-based list segmentation, so each customer gets the right message at the right time.</p>
-        <div class="used"><span>Brevo</span><span>Segmentation</span><span>Automation workflows</span></div></div>
+        <div>
+          <p>Built automated onboarding and promotional drip sequences with dynamic contact fields and behavior-based list segmentation, so each customer gets the right message at the right time.</p>
+          <!-- PLACEHOLDER METRICS: replace every figure in this project with your real numbers before publishing -->
+          <p class="xyz"><b>Result:</b> Lifted repeat purchase rate from 9% to 16% in three months, as measured in Brevo and store orders, by building segmented welcome, nurture and win-back flows.</p>
+          <ol class="steps">
+            <li><span class="m">Month 1</span><span class="n">24% → 38%</span><span class="d">Open rate on new subscribers after the welcome series went live</span></li>
+            <li><span class="m">Month 2</span><span class="n">1.9% → 3.4%</span><span class="d">Click rate after segmenting by behavior and adding dynamic fields</span></li>
+            <li><span class="m">Month 3</span><span class="n">9% → 16%</span><span class="d">Repeat purchase rate after the win-back flow launched</span></li>
+          </ol>
+          <div class="used"><span>Brevo</span><span>Segmentation</span><span>Automation workflows</span></div>
+        </div>
       </article>
+
       <article class="case">
         <div><span class="tag">Performance marketing</span><h3>Paid acquisition and tracking</h3></div>
-        <div><p>Configured Google Tag Manager triggers and Meta Pixel conversion tracking to monitor A/B tests on ad creatives and bring down cost per acquisition.</p>
-        <div class="used"><span>Meta Ads</span><span>Google Tag Manager</span><span>Meta Pixel</span></div></div>
+        <div>
+          <p>Configured Google Tag Manager triggers and Meta Pixel conversion tracking to monitor A/B tests on ad creatives and bring down cost per acquisition.</p>
+          <!-- PLACEHOLDER METRICS: replace every figure in this project with your real numbers before publishing -->
+          <p class="xyz"><b>Result:</b> Cut cost per acquisition by 32% and raised return on ad spend from 1.8x to 3.1x in three months, as measured in Meta Ads Manager, by fixing conversion tracking and A/B testing creatives.</p>
+          <ol class="steps">
+            <li><span class="m">Month 1</span><span class="n">0% → 95%</span><span class="d">Purchases tracked after GTM triggers and Meta Pixel events were verified</span></li>
+            <li><span class="m">Month 2</span><span class="n">0.9% → 1.7%</span><span class="d">Click-through rate from three-way creative A/B tests</span></li>
+            <li><span class="m">Month 3</span><span class="n">−32% CPA</span><span class="d">Cost per acquisition after lookalike audiences were added</span></li>
+          </ol>
+          <div class="used"><span>Meta Ads</span><span>Google Tag Manager</span><span>Meta Pixel</span></div>
+        </div>
       </article>
+
       <article class="case">
         <div><span class="tag">SEO</span><h3>Technical SEO audit</h3></div>
-        <div><p>Ran a full on-page SEO audit, fixed search indexing errors and built a keyword strategy around high-intent searches.</p>
-        <div class="used"><span>Google Search Console</span><span>Keyword research</span><span>On-page SEO</span></div></div>
+        <div>
+          <p>Ran a full on-page SEO audit, fixed search indexing errors and built a keyword strategy around high-intent searches.</p>
+          <!-- PLACEHOLDER METRICS: replace every figure in this project with your real numbers before publishing -->
+          <p class="xyz"><b>Result:</b> Grew organic clicks 2.4x and moved average position from 28 to 14 in three months, as measured in Google Search Console, by fixing indexing errors and targeting high-intent keywords.</p>
+          <ol class="steps">
+            <li><span class="m">Month 1</span><span class="n">24 → 0</span><span class="d">Indexing errors after the technical audit and fixes</span></li>
+            <li><span class="m">Month 2</span><span class="n">15 keywords</span><span class="d">High-intent terms mapped to pages and optimized on-page</span></li>
+            <li><span class="m">Month 3</span><span class="n">2.4x clicks</span><span class="d">Organic clicks, with average position improving from 28 to 14</span></li>
+          </ol>
+          <div class="used"><span>Google Search Console</span><span>Keyword research</span><span>On-page SEO</span></div>
+        </div>
       </article>
     </div>
   </section>
@@ -317,6 +338,31 @@ footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
     </div>
   </section>
 
+  <section class="certs" id="certifications">
+    <div class="wrap">
+      <h2>Certifications</h2>
+      <p class="sub">Verified training in answer engine optimization, inbound marketing and Google Ads.</p>
+      <div class="cert-grid">
+        <article class="cert">
+          <div class="seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF7A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.2 7 22l5-3 5 3-1.5-7.8"/></svg></div>
+          <div><h3>AEO Fundamentals</h3><div class="by">HubSpot Academy</div><dl><dt>Valid</dt><dd>Nov 8, 2026 – Dec 7, 2028</dd><dt>Code</dt><dd>8f6c8838520947a484b3f99de7caddfd</dd></dl></div>
+        </article>
+        <article class="cert">
+          <div class="seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF7A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.2 7 22l5-3 5 3-1.5-7.8"/></svg></div>
+          <div><h3>Digital Marketing Certified</h3><div class="by">HubSpot Academy</div><dl><dt>Valid</dt><dd>Jun 22, 2026 – Jul 22, 2027</dd><dt>Code</dt><dd>a030a9c49d6a4ea087d284c0a394ce4a</dd></dl></div>
+        </article>
+        <article class="cert">
+          <div class="seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF7A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.2 7 22l5-3 5 3-1.5-7.8"/></svg></div>
+          <div><h3>Google Ads Measurement Certification</h3><div class="by">Google</div><dl><dt>Issued</dt><dd>Nov 5, 2026</dd><dt>Expires</dt><dd>Nov 5, 2027</dd><dt>ID</dt><dd>199487743</dd></dl></div>
+        </article>
+        <article class="cert">
+          <div class="seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF7A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.2 7 22l5-3 5 3-1.5-7.8"/></svg></div>
+          <div><h3>Google Ads Creative Certification</h3><div class="by">Google</div><dl><dt>Issued</dt><dd>Nov 11, 2026</dd><dt>Expires</dt><dd>Nov 11, 2027</dd><dt>ID</dt><dd>200096837</dd></dl></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="about" id="about">
     <div class="wrap about-grid">
       <div class="small"><img src="profile.png" alt="Idara Bolajoko smiling softly with a hand resting by her ear" loading="lazy"></div>
@@ -352,14 +398,6 @@ footer{padding:26px 0;font-size:.88rem;color:var(--muted)}
   <div class="wrap">© <span id="yr">2026</span> Idara Bolajoko · Lagos, Nigeria</div>
 </footer>
 
-<script>
-document.getElementById('yr').textContent=new Date().getFullYear();
-var btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
-function setMenu(open){menu.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);btn.setAttribute('aria-label',open?'Close menu':'Open menu');}
-btn.addEventListener('click',function(){setMenu(!menu.classList.contains('open'));});
-menu.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
-window.addEventListener('resize',function(){if(window.innerWidth>860)setMenu(false);});
-</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
